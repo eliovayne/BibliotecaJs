@@ -11,21 +11,21 @@
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand">Biblioteca <i class="bi bi-journal-album"></i></a>
+            <a class="navbar-brand"><i class="bi bi-journal-album"></i> Biblioteca Js</a>
             <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="my-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Libros</a>
+                        <a class="nav-link" href="#">Libro</a>
                     </li>
             </div>
         </nav>
         <br/>
         <br/>
         <br/>
-        <a href="#" class="btn btn-info" type="button">Nuevo Libros <i class="bi bi-plus-circle"></i></a>
+        <a href="#" class="btn btn-info" type="button">Nuevo Libro <i class="bi bi-plus-circle"></i></a>
         <br/>
         <br/>
         <table class="table table-dark">
@@ -38,12 +38,15 @@
               </tr>
           </thead>
           <tbody>
-              <tr>
-                  <td> - </td>
-                  <td> - </td>
-                  <td> - </td>
-                  <td>Borrar | Editar</td>
-              </tr>
+            <% for( let libro = 0; libro < libros.length; libro++ ) { %>
+                <tr>
+                    <td> <%=libros[libro].Id%></td>
+                    <td> <%=libros[libro].nombre%></td>
+                    <td> <%=libros[libro].imagen%></td>
+                    <td>Borrar | Editar</td>
+                </tr>
+            <% } %>
+             
           </tbody>
           </table>
         </div>
