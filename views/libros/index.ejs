@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-    <title>Biblioteca con Node Js</title>
-</head>
-<body>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <a class="navbar-brand"><i class="bi bi-journal-album"></i> Biblioteca Js</a>
-            <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="my-nav" class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Libro</a>
-                    </li>
-            </div>
-        </nav>
+<%- include ../layouts/cabecera.ejs %> 
         <br/>
         <br/>
         <br/>
-        <a href="#" class="btn btn-info" type="button">Nuevo Libro <i class="bi bi-plus-circle"></i></a>
+        <a href="/libros/crear" class="btn btn-info" type="button">Nuevo Libro <i class="bi bi-plus-circle"></i></a>
         <br/>
         <br/>
         <table class="table table-dark">
@@ -38,18 +15,15 @@
               </tr>
           </thead>
           <tbody>
-            <% for( let libro = 0; libro < libros.length; libro++ ) { %>
-                <tr>
+              <% for( let libro = 0; libro < libros.length; libro++ ) { %>
+                 <tr>
                     <td> <%=libros[libro].Id%></td>
                     <td> <%=libros[libro].nombre%></td>
                     <td> <%=libros[libro].imagen%></td>
                     <td>Borrar | Editar</td>
-                </tr>
-            <% } %>
+                 </tr>
+              <% } %>
              
           </tbody>
-          </table>
-        </div>
-    
-</body>
-</html>
+        </table>
+<%- include ../layouts/pie.ejs %> 
